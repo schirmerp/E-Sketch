@@ -10,7 +10,12 @@ function changeColor(e) {
     backgroundColor: color,
   });
 }
-
+function erase(f) {
+  let color = "whitesmoke";
+  Object.assign(f.target.style, {
+    backgroundColor: color,
+  });
+}
 
 
 
@@ -23,6 +28,7 @@ function setupGrid(size) {
     const gridElement = document.createElement('div')
     gridElement.addEventListener('mouseover', changeColor)
     grid.appendChild(gridElement)
+    gridElement.addEventListener('click', erase)
   }
 }
 
